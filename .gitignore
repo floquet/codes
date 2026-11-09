@@ -1,0 +1,114 @@
+# Windows Explorer
+[Tt]humbs.db
+[Ee]hthumbs.db
+[Ee]hthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS Finder and removable drives
+.DS_Store
+.AppleDouble/
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+.TemporaryItems/
+__MACOSX/
+Icon?
+
+# Linux desktop and shared drives
+.directory
+.Trash-*/
+.nfs[0-9a-f]*
+.fuse_hidden*
+.xdg-volume-info
+
+# Editor backups and swap files
+*~
+\#*\#
+.\#*
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+
+# Fortran, C, and C++ build products
+*.o
+*.obj
+*.[mM][oO][dD]
+*.[sS][mM][oO][dD]
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.dSYM/
+a.out
+*.gcda
+*.gcno
+*.gcov
+
+# Build directories and generated CMake files
+build/
+_build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Python bytecode, environments, and tool caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.whl
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Julia coverage and allocation reports
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+
+# LaTeX, Beamer, and bibliography build products
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.run.xml
+*.snm
+*.synctex
+*.synctex.gz
+*.toc
+*.vrb
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.idx
+*.ilg
+*.ind
+
+# Local environment settings
+.env
+.env.local
+.env.*.local
