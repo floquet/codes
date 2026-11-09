@@ -1,0 +1,417 @@
+dantopa@isomer:~/repos-isomer/github$ book="${pGithub:?pGithub is unset or empty}/codes/books/gil-segura-temme"
+dantopa@isomer:~/repos-isomer/github$ cd "$pGithub/framework/pres/spherical-harmonics/local/codes"
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ mkdir -p "$book/algorithms-12-03-and-12-04" \
+         "$book/algorithm-12-05"
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ cp -avi prolate-oblate/. "$book/algorithms-12-03-and-12-04/"
+cp -avi toroidal/.       "$book/algorithm-12-05/"
+
+tree "$book"
+'prolate-oblate/./disk.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithms-12-03-and-12-04/./disk.f'
+'prolate-oblate/./doblh.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithms-12-03-and-12-04/./doblh.f'
+'prolate-oblate/./dproh.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithms-12-03-and-12-04/./dproh.f'
+'prolate-oblate/./adhd_v1_0.tar.gz' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithms-12-03-and-12-04/./adhd_v1_0.tar.gz'
+'prolate-oblate/./testpro.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithms-12-03-and-12-04/./testpro.f'
+'toroidal/./dtorh1.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./dtorh1.f'
+'toroidal/./dtorh2.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./dtorh2.f'
+'toroidal/./dtorh3.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./dtorh3.f'
+'toroidal/./rout.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./rout.f'
+'toroidal/./adkv_v1_0.tar.gz' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./adkv_v1_0.tar.gz'
+'toroidal/./EXAMPLE.F' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./EXAMPLE.F'
+'toroidal/./readme.txt' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./readme.txt'
+'toroidal/./TEST.OUT' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./TEST.OUT'
+'toroidal/./testpro.f' -> '/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme/algorithm-12-05/./testpro.f'
+/home/dantopa/repos-isomer/github/codes/books/gil-segura-temme
+├── algorithm-12-05
+│   ├── adkv_v1_0.tar.gz
+│   ├── dtorh1.f
+│   ├── dtorh2.f
+│   ├── dtorh3.f
+│   ├── EXAMPLE.F
+│   ├── readme.txt
+│   ├── rout.f
+│   ├── TEST.OUT
+│   └── testpro.f
+└── algorithms-12-03-and-12-04
+    ├── adhd_v1_0.tar.gz
+    ├── disk.f
+    ├── doblh.f
+    ├── dproh.f
+    └── testpro.f
+
+3 directories, 14 files
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ repo="${pGithub:?pGithub is unset or empty}/codes"
+deck="$pGithub/framework/pres/spherical-harmonics"
+
+mkdir -p "$repo/slides/spherical-harmonics"
+cp -avi "$deck/main/excerpt-spherical-harmonics.pdf" \
+    "$repo/slides/spherical-harmonics/"
+'/home/dantopa/repos-isomer/github/framework/pres/spherical-harmonics/main/excerpt-spherical-harmonics.pdf' -> '/home/dantopa/repos-isomer/github/codes/slides/spherical-harmonics/excerpt-spherical-harmonics.pdf'
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ sha256sum "$deck/local/codes/testpro.f" \
+    "$deck/local/codes/prolate-oblate/testpro.f" \
+    "$deck/local/codes/toroidal/testpro.f"
+1fc64df3aa6c56dd6f80c9e7055a11f8e9b40c2eec0ad904f43a7141a9446b16  /home/dantopa/repos-isomer/github/framework/pres/spherical-harmonics/local/codes/testpro.f
+1fc64df3aa6c56dd6f80c9e7055a11f8e9b40c2eec0ad904f43a7141a9446b16  /home/dantopa/repos-isomer/github/framework/pres/spherical-harmonics/local/codes/prolate-oblate/testpro.f
+4e0037bf3c9daae652ccddcef1ab3c1accf2a58171496d648660d5da1273c01c  /home/dantopa/repos-isomer/github/framework/pres/spherical-harmonics/local/codes/toroidal/testpro.f
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ repo="${pGithub:?pGithub is unset or empty}/codes"
+deck="$pGithub/framework/pres/spherical-harmonics"
+
+# Remove the loose duplicate test program.
+cmp "$deck/local/codes/testpro.f" \
+    "$repo/books/gil-segura-temme/algorithms-12-03-and-12-04/testpro.f" &&
+    rm -v -- "$deck/local/codes/testpro.f"
+
+# Finish moving the excerpt. You already copied it into codes.
+cmp "$deck/main/excerpt-spherical-harmonics.pdf" \
+    "$repo/slides/spherical-harmonics/excerpt-spherical-harmonics.pdf" &&
+    rm -v -- "$deck/main/excerpt-spherical-harmonics.pdf"
+removed '/home/dantopa/repos-isomer/github/framework/pres/spherical-harmonics/local/codes/testpro.f'
+removed '/home/dantopa/repos-isomer/github/framework/pres/spherical-harmonics/main/excerpt-spherical-harmonics.pdf'
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ repo="${pGithub:?pGithub is unset or empty}/codes"
+book="$repo/books/gil-segura-temme"
+
+cat > "$repo/README.md" <<'EOF'
+# Codes
+
+Scientific programs, scripts, and worked examples.
+
+## Books
+
+- [Numerical Methods for Special Functions](books/gil-segura-temme/) by Gil, Segura, and Temme
+EOF
+
+cat > "$book/README.md" <<'EOF'
+# Numerical Methods for Special Functions
+
+Amparo Gil, Javier Segura, and Nico M. Temme
+
+- [Algorithms 12.3 and 12.4 — Prolate and oblate spheroidal harmonics](algorithms-12-03-and-12-04/)
+- [Algorithm 12.5 — Toroidal harmonics](algorithm-12-05/)
+
+[Authors' software page](https://personales.unican.es/segurajj/book/)
+EOF
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ cat > "$book/algorithms-12-03-and-12-04/README.md" <<'EOF'
+# Algorithms 12.3 and 12.4 — Prolate and oblate spheroidal harmonics
+
+The Fortran package for both algorithms is kept together.
+
+- [Example driver](testpro.f)
+- [Source archive](adhd_v1_0.tar.gz)
+- [Book and upstream software links](../)
+EOF
+
+cat > "$book/algorithm-12-05/README.md" <<'EOF'
+# Algorithm 12.5 — Toroidal harmonics
+
+- [Example program](EXAMPLE.F)
+- [Original package notes](readme.txt)
+- [Sample output](TEST.OUT)
+- [Source archive](adkv_v1_0.tar.gz)
+- [Book and upstream software links](../)
+EOF
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ git -C "$repo" rev-parse --show-toplevel
+git -C "$repo" remote -v
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ repo="${pGithub:?pGithub is unset or empty}/codes"
+
+git -C "$repo" init -b main &&
+git -C "$repo" add -- README.md books/gil-segura-temme/ &&
+git -C "$repo" diff --cached --name-status
+Initialized empty Git repository in /home/dantopa/repos-isomer/github/codes/.git/
+A       README.md
+A       books/gil-segura-temme/README.md
+A       books/gil-segura-temme/algorithm-12-05/EXAMPLE.F
+A       books/gil-segura-temme/algorithm-12-05/README.md
+A       books/gil-segura-temme/algorithm-12-05/TEST.OUT
+A       books/gil-segura-temme/algorithm-12-05/adkv_v1_0.tar.gz
+A       books/gil-segura-temme/algorithm-12-05/dtorh1.f
+A       books/gil-segura-temme/algorithm-12-05/dtorh2.f
+A       books/gil-segura-temme/algorithm-12-05/dtorh3.f
+A       books/gil-segura-temme/algorithm-12-05/readme.txt
+A       books/gil-segura-temme/algorithm-12-05/rout.f
+A       books/gil-segura-temme/algorithm-12-05/testpro.f
+A       books/gil-segura-temme/algorithms-12-03-and-12-04/README.md
+A       books/gil-segura-temme/algorithms-12-03-and-12-04/adhd_v1_0.tar.gz
+A       books/gil-segura-temme/algorithms-12-03-and-12-04/disk.f
+A       books/gil-segura-temme/algorithms-12-03-and-12-04/doblh.f
+A       books/gil-segura-temme/algorithms-12-03-and-12-04/dproh.f
+A       books/gil-segura-temme/algorithms-12-03-and-12-04/testpro.f
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ git -C "$repo" commit -m "Add Gil–Segura–Temme special-function examples"
+[main (root-commit) 830a6e9] Add Gil–Segura–Temme special-function examples
+ 18 files changed, 2712 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 books/gil-segura-temme/README.md
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/EXAMPLE.F
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/README.md
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/TEST.OUT
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/adkv_v1_0.tar.gz
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/dtorh1.f
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/dtorh2.f
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/dtorh3.f
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/readme.txt
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/rout.f
+ create mode 100644 books/gil-segura-temme/algorithm-12-05/testpro.f
+ create mode 100644 books/gil-segura-temme/algorithms-12-03-and-12-04/README.md
+ create mode 100644 books/gil-segura-temme/algorithms-12-03-and-12-04/adhd_v1_0.tar.gz
+ create mode 100644 books/gil-segura-temme/algorithms-12-03-and-12-04/disk.f
+ create mode 100644 books/gil-segura-temme/algorithms-12-03-and-12-04/doblh.f
+ create mode 100644 books/gil-segura-temme/algorithms-12-03-and-12-04/dproh.f
+ create mode 100644 books/gil-segura-temme/algorithms-12-03-and-12-04/testpro.f
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ repo="${pGithub:?pGithub is unset or empty}/codes"
+
+git -C "$repo" remote add origin git@github.com:floquet/codes.git &&
+git -C "$repo" push -u origin main
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ gh auth status
+github.com
+  ✓ Logged in to github.com account floquet (keyring)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'gist', 'read:org', 'repo', 'workflow'
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ gh repo create floquet/codes --public
+✓ Created repository floquet/codes on GitHub
+  https://github.com/floquet/codes
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ git -C "${pGithub:?pGithub is unset or empty}/codes" push -u origin main
+Enumerating objects: 24, done.
+Counting objects: 100% (24/24), done.
+Delta compression using up to 14 threads
+Compressing objects: 100% (23/23), done.
+Writing objects: 100% (24/24), 31.05 KiB | 15.53 MiB/s, done.
+Total 24 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), done.
+To github.com:floquet/codes.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ repo="${pGithub:?pGithub is unset or empty}/codes"
+
+cat > "$repo/README.md" <<'EOF'
+# Codes
+
+A public collection of scientific codes, worked examples, and scripts.
+Browse the source, find the original references, and follow along with
+examples from books and presentations.
+
+The collection is organized by source and subject. Individual entries
+can contain Fortran, Python, Julia, shell scripts, or other languages.
+
+## Books
+
+### Numerical Methods for Special Functions
+
+Amparo Gil, Javier Segura, and Nico M. Temme
+
+- [Book index and upstream software](books/gil-segura-temme/)
+- [Algorithms 12.3 and 12.4 — Prolate and oblate spheroidal harmonics](books/gil-segura-temme/algorithms-12-03-and-12-04/)
+- [Algorithm 12.5 — Toroidal harmonics](books/gil-segura-temme/algorithm-12-05/)
+
+## Attribution and reuse
+
+For third-party code, see the original source and any license or reuse
+terms supplied with the package.
+EOF
+
+git -C "$repo" diff -- README.md
+diff --git a/README.md b/README.md
+index 3d78a8d..e8991ee 100644
+--- a/README.md
++++ b/README.md
+@@ -1,7 +1,23 @@
+ # Codes
+ 
+-Scientific programs, scripts, and worked examples.
++A public collection of scientific codes, worked examples, and scripts.
++Browse the source, find the original references, and follow along with
++examples from books and presentations.
++
++The collection is organized by source and subject. Individual entries
++can contain Fortran, Python, Julia, shell scripts, or other languages.
+ 
+ ## Books
+ 
+-- [Numerical Methods for Special Functions](books/gil-segura-temme/) by Gil, Segura, and Temme
++### Numerical Methods for Special Functions
++
++Amparo Gil, Javier Segura, and Nico M. Temme
++
++- [Book index and upstream software](books/gil-segura-temme/)
++- [Algorithms 12.3 and 12.4 — Prolate and oblate spheroidal harmonics](books/gil-segura-temme/algorithms-12-03-and-12-04/)
++- [Algorithm 12.5 — Toroidal harmonics](books/gil-segura-temme/algorithm-12-05/)
++
++## Attribution and reuse
++
++For third-party code, see the original source and any license or reuse
++terms supplied with the package.
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ git -C "$repo" commit -m "Describe the public code collection" -- README.md &&
+git -C "$repo" push
+[main 5b824cd] Describe the public code collection
+ 1 file changed, 18 insertions(+), 2 deletions(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 14 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 760 bytes | 760.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:floquet/codes.git
+   830a6e9..5b824cd  main -> main
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ 
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ repo="${pGithub:?pGithub is unset or empty}/codes"
+
+cat > "$repo/.gitignore" <<'EOF'
+# Windows Explorer
+[Tt]humbs.db
+[Ee]hthumbs.db
+[Ee]hthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS Finder and removable drives
+.DS_Store
+.AppleDouble/
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+.TemporaryItems/
+__MACOSX/
+Icon?
+
+# Linux desktop and shared drives
+.directory
+.Trash-*/
+.nfs[0-9a-f]*
+.fuse_hidden*
+.xdg-volume-info
+
+# Editor backups and swap files
+*~
+\#*\#
+.\#*
+*.swp
+*.swo
+*.swn
+*.sublime-workspace
+
+# Fortran, C, and C++ build products
+*.o
+*.obj
+*.[mM][oO][dD]
+*.[sS][mM][oO][dD]
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.dSYM/
+a.out
+*.gcda
+*.gcno
+*.gcov
+
+# Build directories and generated CMake files
+build/
+_build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Python bytecode, environments, and tool caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.whl
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Julia coverage and allocation reports
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+
+# LaTeX, Beamer, and bibliography build products
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.run.xml
+*.snm
+*.synctex
+*.synctex.gz
+*.toc
+*.vrb
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.idx
+*.ilg
+*.ind
+
+# Local environment settings
+.env
+.env.local
+.env.*.local
+EOF
+
+git -C "$repo" status --short --ignored
+?? .gitignore
+?? slides/
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ git -C "$repo" add -- .gitignore &&
+git -C "$repo" commit -m "Ignore OS clutter and generated files" -- .gitignore &&
+git -C "$repo" push
+[main 404755a] Ignore OS clutter and generated files
+ 1 file changed, 114 insertions(+)
+ create mode 100644 .gitignore
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 14 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.04 KiB | 1.04 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:floquet/codes.git
+   5b824cd..404755a  main -> main
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ lss
+total 24K
+drwxrwxr-x  4 dantopa dantopa 4.0K Nov  9 16:05 .
+drwxrwxr-x 13 dantopa dantopa 4.0K Nov  6 22:08 ..
+-rw-rw-r--  1 dantopa dantopa 3.8K Nov  7 15:06 FukushimaLegendre.wl
+-rw-rw-r--  1 dantopa dantopa 1.7K Nov  9 16:02 excerpt-pdf.txt
+drwxrwxr-x  2 dantopa dantopa 4.0K Sep 13 21:25 prolate-oblate
+drwxrwxr-x  2 dantopa dantopa 4.0K Sep 13 21:23 toroidal
+dantopa@isomer:~/repos-isomer/github/framework/pres/spherical-harmonics/local/codes$ cd $repo
+dantopa@isomer:~/repos-isomer/github/codes$ lss
+total 28K
+drwxrwxr-x  5 dantopa dantopa 4.0K Nov  9 16:14 .
+drwxrwxr-x 24 dantopa dantopa 4.0K Nov  9 15:59 ..
+drwxrwxr-x  8 dantopa dantopa 4.0K Nov  9 16:14 .git
+-rw-rw-r--  1 dantopa dantopa 1.3K Nov  9 16:14 .gitignore
+-rw-rw-r--  1 dantopa dantopa  835 Nov  9 16:12 README.md
+drwxrwxr-x  3 dantopa dantopa 4.0K Nov  9 16:02 books
+drwxrwxr-x  3 dantopa dantopa 4.0K Nov  9 16:03 slides
+dantopa@isomer:~/repos-isomer/github/codes$ 
+
